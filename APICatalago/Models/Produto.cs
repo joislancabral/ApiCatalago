@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace APICatalago.Models;
 [Table("Produtos")]
@@ -24,6 +25,7 @@ public class Produto
     //Relacionamento
     // Um produto pode ter uma categoria
     public int CategoriaId { get; set; }
+    [JsonIgnore]
     public Categoria? Categoria { get; set; }
 
 
